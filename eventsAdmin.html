@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel Admin</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/eventsAdmin.css">
+    <link rel="stylesheet" href="./assets/css/sideBar.css">
+</head>
+
+<body>
+
+    <button class="btn btn-primary d-md-none m-2 position-fixed" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="d-flex">
+
+        <nav class="sidebar d-flex flex-column flex-shrink-0 position-fixed" id="sidebar">
+            <!-- Botón solo visible en movil -->
+            <button class="btn btn-light d-md-none align-self-end m-2" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Boton solo en escritorio -->
+            <button class="toggle-btn d-none d-md-block" onclick="toggleSidebar()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="logo-container p-4 d-flex justify-content-center">
+                <img class="logo-text img-fluid" src="./assets/img/logo.png" alt="Logo Planify" id="sidebarLogo">
+            </div>
+
+            <div class="nav flex-column">
+                <a href="./statistics.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-home me-3"></i>
+                    <span class="hide-on-collapse">Escritorio</span>
+                </a>
+                <a href="./subscriptions.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-chart-bar me-3"></i>
+                    <span class="hide-on-collapse">Suscripciones</span>
+                </a>
+                <a href="./eventsAdmin.html" class="sidebar-link active text-decoration-none p-3">
+                    <i class="fas fa-users me-3"></i>
+                    <span class="hide-on-collapse">Gestion</span>
+                </a>
+                <a href="./contact.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-box me-3"></i>
+                    <span class="hide-on-collapse">Contacto</span>
+                </a>
+
+            </div>
+
+            <div class="profile-section mt-auto py-4">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <a href="index.html" class="sidebar-link text-decoration-none p-3">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <span class="hide-on-collapse ms-3">Salir</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="p-4 main-content flex-grow-1 pt-5">
+            <h2>Bienvenido, Administrador Andrés</h2>
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4 gap-2">
+                <h3 class="mb-0">Panel de Control</h3>
+                <div class="d-flex gap-2">
+                    <input type="text" class="form-control" placeholder="Buscar evento" id="searchEvent">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEvento">Agregar
+                        Evento</button>
+                </div>
+            </div>
+            <!-- Contenedor de eventos -->
+            <div id="eventContainer" class="d-flex flex-column gap-3 p-3"></div>
+        </main>
+    </div>
+
+
+    <!-- Modal para agregar/editar evento -->
+    <div class="modal fade" id="modalEvento" tabindex="-1" aria-labelledby="modalEventoLabel" aria-hidden="true"
+        data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center">
+                    <h5 class="modal-title" id="modalEventoLabel">Información del Evento</h5>
+                </div>
+
+                <div class="modal-body">
+                    <form id="eventForm">
+
+                        <div class="mb-3">
+                            <label for="eventTitle" class="form-label">Título del evento</label>
+                            <input type="text" class="form-control" id="eventTitle" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="eventLocation" class="form-label">Locación del evento</label>
+                            <input type="text" class="form-control" id="eventLocation" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="eventDescription" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="eventDescription" rows="3" required></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="eventDate" class="form-label">Fecha del evento</label>
+                            <input type="date" class="form-control" id="eventDate" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="eventCapacity" class="form-label">Capacidad del evento</label>
+                            <input type="number" class="form-control" id="eventCapacity" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="eventStatus" class="form-label">Estado del evento</label>
+                            <select name="eventStatus" id="eventStatus" class="form-select">
+                                <option value="defecto" disabled selected>Escoge una opción</option>
+                                <option value="activo">Activo</option>
+                                <option value="inactivo">Inactivo</option>
+                                <option value="cancelado">Cancelado</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="eventImg" class="form-label">Portada del evento</label>
+                            <input type="file" class="form-control" id="eventImg" required>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="cancelEdit" class="btn btn-secondary"
+                        data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" id="saveEvent" form="formEvento" class="btn btn-primary">Guardar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- modal de la galeria de imagenes -->
+    <div class="modal fade" id="modalGallery" tabindex="-1" aria-labelledby="modalGalleryLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Agregar Galería</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="file" id="galleryInput" accept="image/*" multiple class="form-control mb-3">
+                    <div id="galleryPreview" class="d-flex flex-wrap gap-2"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="saveGallery" class="btn btn-primary">Guardar galería</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/eventos.js"></script>
+
+</body>
+
+</html>

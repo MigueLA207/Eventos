@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Cards</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/sideBar.css">
+    <link rel="stylesheet" href="./assets/css/statistics.css">
+</head>
+
+<body>
+    <button class="btn btn-primary d-md-none m-2 position-fixed" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="d-flex">
+
+        <nav class="sidebar d-flex flex-column flex-shrink-0 position-fixed" id="sidebar">
+            <!-- Botón solo visible en movil -->
+            <button class="btn btn-light d-md-none align-self-end m-2" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Boton solo en escritorio -->
+            <button class="toggle-btn d-none d-md-block" onclick="toggleSidebar()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="logo-container p-4 d-flex justify-content-center">
+                <img class="logo-text img-fluid" src="./assets/img/logo.png" alt="Logo Planify" id="sidebarLogo">
+            </div>
+
+            <div class="nav flex-column">
+                <a href="./statistics.html" class="sidebar-link active text-decoration-none p-3">
+                    <i class="fas fa-home me-3"></i>
+                    <span class="hide-on-collapse">Escritorio</span>
+                </a>
+                <a href="./subscriptions.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-chart-bar me-3"></i>
+                    <span class="hide-on-collapse">Suscripciones</span>
+                </a>
+                <a href="./eventsAdmin.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-users me-3"></i>
+                    <span class="hide-on-collapse">Gestion</span>
+                </a>
+                <a href="./contact.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-box me-3"></i>
+                    <span class="hide-on-collapse">Contacto</span>
+                </a>
+
+            </div>
+
+            <div class="profile-section mt-auto py-4">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <a href="./index.html" class="sidebar-link text-decoration-none p-3">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <span class="hide-on-collapse ms-3">Salir</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="container main-content pt-5">
+            <h2>Bienvenido, Administrador Andrés</h2>
+            <h3 class="mb-4">Estadísticas de eventos</h3>
+
+            <div class="row g-4 min-vh-90">
+                <!-- Eventos Activos -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card dashboard-card card-blue h-100">
+                        <div class="card-body text-center">
+                            <div class="card-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="card-number" id="activeEvents">26</div>
+                            <div class="card-title">Eventos Activos</div>
+                            <button class="btn btn-view-details w-100">
+                                <i class="fas fa-arrow-right me-2"></i>Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eventos Cancelados -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card dashboard-card card-green h-100">
+                        <div class="card-body text-center">
+                            <div class="card-icon">
+                                <i class="fas fa-calendar-times"></i>
+                            </div>
+                            <div class="card-number" id="canceledEvents">12</div>
+                            <div class="card-title">Eventos Cancelados</div>
+                            <button class="btn btn-view-details w-100">
+                                <i class="fas fa-arrow-right me-2"></i>Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eventos Inactivos -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card dashboard-card card-orange h-100">
+                        <div class="card-body text-center">
+                            <div class="card-icon">
+                                <i class="fas fa-calendar-minus"></i>
+                            </div>
+                            <div class="card-number" id="inactiveEvents">124</div>
+                            <div class="card-title">Eventos Inactivos</div>
+                            <button class="btn btn-view-details w-100">
+                                <i class="fas fa-arrow-right me-2"></i>Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eventos Totales -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card dashboard-card card-orange h-100">
+                        <div class="card-body text-center">
+                            <div class="card-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="card-number" id="totalEvents">124</div>
+                            <div class="card-title">Eventos en Total</div>
+                            <button class="btn btn-view-details w-100">
+                                <i class="fas fa-arrow-right me-2"></i>Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Correos Registrados -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="card dashboard-card card-red h-100">
+                        <div class="card-body text-center">
+                            <div class="card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="card-number" id="registeredEmails">13</div>
+                            <div class="card-title">Correos Registrados</div>
+                            <button class="btn btn-view-details w-100">
+                                <i class="fas fa-arrow-right me-2"></i>Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mensajes de Contacto -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="card dashboard-card card-red h-100">
+                        <div class="card-body text-center">
+                            <div class="card-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="card-number" id="contactMessages">13</div>
+                            <div class="card-title">Mensajes de Contacto</div>
+                            <button class="btn btn-view-details w-100">
+                                <i class="fas fa-arrow-right me-2"></i>Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/statistics.js"></script>
+</body>
+
+</html>

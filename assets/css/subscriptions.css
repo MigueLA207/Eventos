@@ -1,0 +1,75 @@
+:root {
+    --secondary-bg: #5E0A6C;
+    --accent-color: #B10E5C;
+    --dark-bg: #02010A;
+    --light-text: #f8f9fa;
+    --muted-text: #cccccc;
+}
+
+body {
+    background-color: #450a5e45 ;
+    color: var(--light-text);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #d81b60;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(177, 14, 92, 0.5);
+}
+
+.table-custom {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #37004b !important; /* morado intenso */
+    border-radius: 12px;
+    overflow: hidden;
+    color: var(--light-text);
+}
+
+.table-custom thead {
+    background-color: #4e0065 !important; /* morado más claro */
+    color: var(--light-text);
+}
+
+.table-custom th,
+.table-custom td {
+    border: none !important;
+    padding: 0.75rem;
+    vertical-align: middle;
+}
+
+.table-custom tbody tr {
+    transition: background-color 0.3s;
+}
+
+.table-custom tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.btn-delete {
+    background-color: var(--accent-color);
+    border: none;
+    font-size: 0.9rem;
+    padding: 0.35rem 0.75rem;
+    color: #fff;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #d81b60;
+}
+
+.btn-delete i {
+    margin-right: 4px;
+}
+

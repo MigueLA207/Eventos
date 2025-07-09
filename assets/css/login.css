@@ -1,0 +1,76 @@
+/* Fondo animado usando tu paleta personalizada */
+
+body {
+
+    color: white;
+    background: linear-gradient(-45deg, #450A5E, #5E0A6C, #B10E5C, #02010A);
+    background-size: 400% 400%;
+    animation: animateGradient 20s ease infinite;
+  }
+  
+  @keyframes animateGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.inputs input {
+    border-radius: 5px;
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+}
+
+.inputs button:hover {
+    background-color: rgba(0, 0, 0, 0.288);
+    color: wheat;
+
+}
+
+.container-inputs {
+    display: flex;
+    margin-top: 8%;
+    color: white;
+    gap: 10px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.582);
+    padding: 200px;
+    border-radius: 30px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+  color: #450A5E;
+}
+
+.btn-primary {
+    background-color: #5E0A6C;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #d81b60;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(177, 14, 92, 0.5);
+}

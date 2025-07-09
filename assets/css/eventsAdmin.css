@@ -1,0 +1,128 @@
+:root {
+    --main-bg: #450A5E;
+    --secondary-bg: #5E0A6C;
+    --accent-color: #B10E5C;
+    --dark-bg: #02010A;
+    --light-text: #f8f9fa;
+    --muted-text: #cccccc;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #450a5e45;
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--light-text);
+}
+
+#eventContainer {
+    max-height: 70vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-bg) var(--muted-text);
+}
+
+.text-container {
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.img-size {
+    width: 260px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card-event .custom-card {
+    background: linear-gradient(135deg, var(--main-bg), var(--secondary-bg));
+    color: var(--light-text);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-event .custom-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-event .eventTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+.description-container {
+    max-height: 3.6em; 
+    overflow: hidden;
+    position: relative;
+}
+
+.description-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 1.2em;
+    background: linear-gradient(to right, transparent, #450A5E);
+}
+
+.card-event .card-description {
+    margin: 0;
+    color: #ddd;
+    font-size: 0.9rem;
+}
+
+.card-event .btn-edit-event {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.4em 0.6em;
+    transition: background-color 0.2s ease;
+}
+
+.card-event .btn-edit-event:hover {
+    background-color: #d81b60;
+}
+
+.status-badge {
+    background-color: #28a745;
+    padding: 0.4em 0.7em;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}
+
+.card-event small.text-muted {
+    color: #e0e0e0 !important;
+}
+
+
+.btn-primary {
+    background-color: var(--accent-color);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #d81b60;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(177, 14, 92, 0.5);
+}
+
+.modal-content{
+    color: var(--dark-bg);
+}
+@media(max-width: 768px){
+    .img-size{
+        width: 100%;
+    }
+
+    main h2{
+        text-align: center;
+    }
+}

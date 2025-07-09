@@ -1,0 +1,189 @@
+/* 🌈 PALETA DE COLORES */
+:root {
+  --violeta-oscuro: #450A5E;
+  --violeta-medio: #5E0A6C;
+  --magenta: #B10E5C;
+  --negro-azulado: #02010A;
+}
+
+/* 🎨 FONDOS PERSONALIZADOS */
+.bg-violeta-oscuro {
+  background-color: var(--violeta-oscuro) !important;
+  color: white;
+}
+
+.bg-violeta-medio {
+  background-color: var(--violeta-medio) !important;
+  color: white;
+}
+
+.bg-magenta {
+  background-color: var(--magenta) !important;
+  color: white;
+}
+
+.bg-negro-azulado {
+  background-color: var(--negro-azulado) !important;
+  color: white;
+}
+
+/* 🎯 TEXTO PERSONALIZADO */
+.text-magenta {
+  color: var(--magenta) !important;
+}
+
+/* 🔘 BOTÓN PERSONALIZADO */
+.btn-magenta {
+  background-color: var(--magenta);
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-magenta:hover {
+  background-color: #980a4f;
+  color: white;
+}
+
+/* 🎠 CARRUSEL */
+#carouselEventos .carousel-item img {
+  height: 100vh;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+}
+
+#carouselEventos {
+  border: 3px solid var(--violeta-medio);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.caption-fondo {
+  background-color: var(--magenta);
+  opacity: 0.85;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+/* 🌐 RESPONSIVE CARRUSEL */
+@media (max-width: 768px) {
+  #carouselEventos .carousel-item img {
+    height: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  #carouselEventos .carousel-item img {
+    height: 250px;
+  }
+
+  .carousel-caption {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .carousel-caption h5 {
+    font-size: 1rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.85rem;
+  }
+}
+
+/* 📩 SECCIÓN DE CONTACTO */
+.seccion-contacto {
+  background-color: white;
+  color: #000;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.titulo-contacto {
+  color: var(--violeta-medio);
+}
+
+.mapa {
+  width: 100%;
+  height: 300px;
+  border: 1px solid var(--violeta-medio);
+  border-radius: 4px;
+}
+
+.input-contacto {
+  background-color: transparent;
+  color: #000;
+  border: 1px solid #333;
+}
+
+.input-contacto:focus {
+  border-color: var(--violeta-medio);
+  box-shadow: none;
+}
+
+.btn-enviar {
+  border: 1px solid #000;
+  background-color: transparent;
+  color: #000;
+  transition: 0.3s;
+}
+
+.btn-enviar:hover {
+  background-color: var(--violeta-medio);
+  color: white;
+  border-color: var(--violeta-medio);
+}
+
+/* 🧾 SECCIÓN DE BENEFICIOS */
+section.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.bi {
+  transition: transform 0.3s ease;
+}
+
+.bi:hover {
+  transform: scale(1.2);
+}
+
+/* EVENTOS - Estilos para las imágenes de las tarjetas de eventos */
+.card-img-top {
+  height: 200px; /* Puedes ajustar esta altura según tu preferencia */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+}
+
+/* 🦶 FOOTER */
+footer input::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+footer input {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+}
+
+footer input:focus {
+  background-color: transparent;
+  color: white;
+  border-color: var(--magenta);
+  box-shadow: none;
+}
+
+footer button {
+  padding: 0 12px;
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+footer button:hover {
+  background-color: var(--magenta);
+  border-color: var(--magenta);
+  color: white;
+}

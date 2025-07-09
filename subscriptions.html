@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscripciones</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/sideBar.css">
+    <link rel="stylesheet" href="./assets/css/subscriptions.css">
+</head>
+
+<body>
+    <button class="btn btn-primary d-md-none m-2 position-fixed" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="d-flex">
+
+        <nav class="sidebar d-flex flex-column flex-shrink-0 position-fixed" id="sidebar">
+            <!-- Botón solo visible en movil -->
+            <button class="btn btn-light d-md-none align-self-end m-2" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Boton solo en escritorio -->
+            <button class="toggle-btn d-none d-md-block" onclick="toggleSidebar()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="logo-container p-4 d-flex justify-content-center">
+                <img class="logo-text img-fluid" src="./assets/img/logo.png" alt="Logo Planify" id="sidebarLogo">
+            </div>
+
+            <div class="nav flex-column">
+                <a href="./statistics.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-home me-3"></i>
+                    <span class="hide-on-collapse">Escritorio</span>
+                </a>
+                <a href="./subscriptions.html" class="sidebar-link active text-decoration-none p-3">
+                    <i class="fas fa-chart-bar me-3"></i>
+                    <span class="hide-on-collapse">Suscripciones</span>
+                </a>
+                <a href="./eventsAdmin.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-users me-3"></i>
+                    <span class="hide-on-collapse">Gestion</span>
+                </a>
+                <a href="./contact.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-box me-3"></i>
+                    <span class="hide-on-collapse">Contacto</span>
+                </a>
+
+            </div>
+
+            <div class="profile-section mt-auto py-4">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <a href="./index.html" class="sidebar-link text-decoration-none p-3">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <span class="hide-on-collapse ms-3">Salir</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="p-4 main-content flex-grow-1 pt-5">
+            <h2>Bienvenido, Administrador Andrés</h2>
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4 gap-2">
+                <h3 class="mb-0">Panel de Control</h3>
+            </div>
+
+
+
+            <section class="table-responsive">
+                <table id="tableEmails" class="table-custom align-middle text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Correo Registrado</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="subscriptionsTableBody">
+                       
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="./assets/js/subscriptions.js"></script>
+</body>
+
+</html>

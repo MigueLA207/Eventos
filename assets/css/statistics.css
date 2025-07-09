@@ -1,0 +1,115 @@
+:root {
+    --secondary-bg: #5E0A6C;
+    --accent-color: #B10E5C;
+    --dark-bg: #02010A;
+    --light-text: #f8f9fa;
+    --muted-text: #cccccc;
+}
+
+body {
+    background-color: #450a5e45;
+    color: var(--light-text);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.main-content {
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    border: none;
+}
+
+.dashboard-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(135deg, var(--secondary-bg), var(--main-bg));
+    color: var(--light-text);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.card-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--light-text);
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: var(--muted-text);
+}
+
+.btn-view-details {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--light-text);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-view-details:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: white;
+}
+
+.card-blue {
+    background: linear-gradient(135deg, #5E0A6C, #450A5E);
+}
+
+.card-green {
+    background: linear-gradient(135deg, #5E0A6C, #450A5E);
+}
+
+.card-orange {
+    background: linear-gradient(135deg, #5E0A6C, #450A5E);
+}
+
+.card-red {
+    background: linear-gradient(135deg, #5E0A6C, #450A5E);
+}
+
+
+@media (max-width: 768px) {
+    .min-vh-90 {
+        margin-top: 1px;
+        height: 80vh;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--secondary-bg) var(--muted-text); 
+    }
+
+    main h2,h3{
+        text-align: center;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 100%;
+    }
+}

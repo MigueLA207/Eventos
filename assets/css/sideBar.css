@@ -1,0 +1,141 @@
+:root {
+    --sidebar-width: 280px;
+    --sidebar-width-collapsed: 80px;
+    --main-bg: #450A5E;
+    --secondary-bg: #5E0A6C;
+    --accent-color: #B10E5C;
+    --dark-bg: #02010A;
+    --light-text: #f8f9fa;
+    --muted-text: #cccccc;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: linear-gradient(135deg, var(--main-bg), var(--secondary-bg));
+    transition: all 0.5s ease;
+    z-index: 1050;
+}
+
+
+.logo-container {
+    transition: all 0.5s ease;
+    text-align: center;
+}
+
+#sidebarLogo {
+    max-width: 160px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.collapsed #sidebarLogo {
+    max-width: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.sidebar.collapsed {
+    width: var(--sidebar-width-collapsed);
+}
+
+.sidebar-link {
+    color: var(--muted-text);
+    transition: all 0.5s ease;
+    border-radius: 8px;
+    margin: 4px 16px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    color: var(--light-text);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+
+
+.profile-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.main-content {
+    margin-left: var(--sidebar-width);
+    transition: all 0.5s ease;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.collapsed-content {
+    margin-left: var(--sidebar-width-collapsed) !important;
+}
+
+.toggle-btn {
+    position: absolute;
+    right: -15px;
+    top: 20px;
+    background: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    z-index: 1060;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.collapsed .toggle-btn {
+    transform: rotate(180deg);
+}
+
+.collapsed .hide-on-collapse,
+
+.collapsed .profile-info {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.collapsed .sidebar-link {
+    text-align: center;
+    padding: 1rem !important;
+    margin-right: auto;
+}
+
+.collapsed .sidebar-link:first-child {
+    margin-top: 70px;
+}
+
+.collapsed .sidebar-link i {
+    margin: 0 !important;
+}
+
+.profile-info {
+    transition: opacity 0.2s ease;
+}
+
+
+@media (max-width: 767.98px) {
+    .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+    }
+
+    .sidebar.show-mobile {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+    }
+
+    main h2,h3{
+        text-align: center;
+    }
+}
