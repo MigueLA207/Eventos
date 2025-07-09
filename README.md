@@ -41,13 +41,13 @@ En desarrollo. Falta implementar el envío automático de correos cada vez que s
 ## Capturas
 
 ### Página principal
-![Página principal](./assets/img/img1.png)
+![Página principal](assets/img/img1.png)
 
 ### Sección de contacto
-![Sección de contacto](./assets/img/img2.png)
+![Sección de contacto](assets/img/img2.png)
 
 ### Panel de administración
-![Panel de administración](./assets/img/img3.png)
+![Panel de administración](assets/img/img3.png)
 
 ## Contacto
 
